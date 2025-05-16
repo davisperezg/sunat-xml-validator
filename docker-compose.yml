@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  sunat-validator:
+    build: .
+    ports:
+      - "8088:8088"
+    environment:
+      - SERVER_PORT=8088
+    volumes:
+      - ./logs:/app/logs
+    tty: true
+    stdin_open: true
