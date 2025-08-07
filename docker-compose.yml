@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   sunat-validator:
+    restart: always
     build: .
     ports:
       - "8088:8088"
