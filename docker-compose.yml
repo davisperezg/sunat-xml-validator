@@ -1,14 +1,14 @@
-version: '3.8'
+version: "3.8"
 
 services:
   sunat-validator:
-    restart: always
+    image: sunat-validator:latest
     build: .
     ports:
       - "8088:8088"
     environment:
-      - SERVER_PORT=8088
-    volumes:
-      - ./logs:/app/logs
-    tty: true
-    stdin_open: true
+      SERVER_PORT: 8088
+    restart: always
+
+
+

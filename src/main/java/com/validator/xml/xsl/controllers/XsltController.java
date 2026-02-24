@@ -27,6 +27,9 @@ public class XsltController {
     ) {
     	XmlResponse response = new XmlResponse();
     	
+    	System.out.print("auuuu");
+    	   
+    	
     	// Verificar si no se proporcionó Content-Type
         if (contentType == null || contentType.isEmpty()) {
             response.addError("El encabezado 'Content-Type' es requerido.");

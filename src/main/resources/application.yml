@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: xml
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:prod}
+
+server:
+  port: ${SERVER_PORT:8088}
+
+xslt:
+  paths:
+    ValidaExprRegFactura: sunat_archivos/sfs/VALI/commons/xsl/validation/2.X/ValidaExprRegFactura-2.0.1.xsl
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+      hibernate:
+        SQL: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} | %-5level | %logger{36} | %msg%n"
