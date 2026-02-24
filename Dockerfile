@@ -4,19 +4,19 @@
 FROM eclipse-temurin:17-jdk AS builder
 WORKDIR /app
 
-# 1️⃣ Copiar solo archivos de dependencias
+# Copiar solo archivos de dependencias
 COPY pom.xml .
 COPY mvnw .
 COPY .mvn .mvn
 
 RUN chmod +x mvnw \
- && ./mvnw dependency:go-offline
+ && ./mvnw dependency:resolve -B
 
-# 2️⃣ Copiar el código
+# Copiar el código
 COPY src src
 
-# 3️⃣ Compilar
-RUN ./mvnw package -DskipTests
+# Compilar
+RUN ./mvnw package -DskipTests -B
 
 # =========================
 # FASE DE RUNTIME
